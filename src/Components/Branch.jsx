@@ -18,19 +18,32 @@ const Branch =({ selectedBank ,handleBranchId,handleBranchName})=>{
 
     
        
-  return (
+    return (
       <>
-        <h1>{selectedBank}</h1>
-        <ul>
-          {branchName.map((branch, index) => (
-            <li key={index}   onClick={()=>{handleBranchId(branch.branch_id) ,handleBranchName(branch.branch_name)}} 
-                style={{ cursor: 'pointer', padding: '5px', borderBottom: '1px solid #ccc' } }>
-                 <Link to="/banks/branches/services">{`${selectedBank}-${branch.branch_name}`}</Link></li>
-          ))}
-        </ul>   
+        <h1 className="my-4 text-center">{selectedBank}</h1>
+        <div className="container">
+          <ul className="list-group">
+            {branchName.map((branch, index) => (
+          <Link to="/banks/branches/services" className="text-decoration-none text-dark">     <li
+                key={index}
+                onClick={() => {
+                  handleBranchId(branch.branch_id);
+                  handleBranchName(branch.branch_name);
+                }}
+                className="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                style={{ cursor: 'pointer' }}
+              >
+               
+                  {`${selectedBank}-${branch.branch_name}`}
+                
+              </li>
+              </Link>
+            ))}
+          </ul>
+        </div>
       </>
     );
-
+    
 
 
 

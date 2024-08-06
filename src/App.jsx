@@ -4,6 +4,10 @@ import Branch from './Components/Branch'
 import Service from './Components/Service'
 import { useState , useEffect} from "react"
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+
 
 function App() {
 

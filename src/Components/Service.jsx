@@ -23,16 +23,19 @@ const Service = ({ selectedBranchId ,selectedBank,selectedBranchName}) => {
 
     return (
         <>
-            <h1>{`${selectedBank}${selectedBranchName}`}</h1>
-            <ul>
-                {
-                    serviceName.map((service, index) => (
-                        <li key={index}>{service}</li>
-                    ))
-                }
+          <h1 className="my-4 text-center">{`${selectedBank} - ${selectedBranchName}`}</h1>
+          <div className="container">
+            <ul className="list-group">
+              {serviceName.map((service, index) => (
+                <li key={index} className="list-group-item">
+                  {service}
+                </li>
+              ))}
             </ul>
+          </div>
         </>
-    );
+      );
+      
 };
 
 export default Service;
